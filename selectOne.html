@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generate Your Resume</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    @keyframes scaleIn {
+      from {
+        transform: scale(0.9);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
+
+    .scale-in {
+      animation: scaleIn 0.3s ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-blue-500 text-gray-800">
+  <header class="bg-yellow-400 py-4 shadow-lg">
+    <h1 class="text-3xl font-bold text-center text-gray-800">Generate Your Resume</h1>
+  </header>
+  
+  <main class="py-8 px-4">
+    <h2 class="text-xl font-semibold text-center mb-6 text-white fade-in">Choose a Template to Get Started</h2>
+    <div class="card-container grid m-10 grid-cols-1 md:grid-cols-2 gap-10" >
+      <!-- Card 1 -->
+      <div class="card bg-white rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+        <img src="./images/resume1.webp" alt="Resume Template 1" class="w-full h-auto object-contain rounded-t-lg cursor-pointer">
+        <div class="p-4 flex justify-between items-center">
+          <button 
+            onclick="openform(1)" 
+            class="bg-yellow-400 text-gray-800 px-4 py-2 rounded-lg hover:bg-yellow-500 transition-all">
+            Customize
+          </button>
+          <span class="view-icon bg-yellow-400 p-2 rounded-lg hover:bg-yellow-500 transition-all">
+            <img src="./images/icons8-enlarge-50.png" alt="View" class="h-5 w-5">
+          </span>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card bg-white rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+        <img src="./images/resume2.webp" alt="Resume Template 2" class="w-full h-auto object-contain rounded-t-lg cursor-pointer">
+        <div class="p-4 flex justify-between items-center">
+          <button 
+            onclick="openform(2)" 
+            class="bg-yellow-400 text-gray-800 px-4 py-2 rounded-lg hover:bg-yellow-500 transition-all">
+            Customize
+          </button>
+          <span class="view-icon bg-yellow-400 p-2 rounded-lg hover:bg-yellow-500 transition-all">
+            <img src="./images/icons8-enlarge-50.png" alt="View" class="h-5 w-5">
+          </span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden" id="imageModal">
+    <span class="close absolute top-4 right-4 text-4xl text-white cursor-pointer" id="closeModal">&times;</span>
+    <img src="" alt="Enlarged Resume" id="modalImage" class="rounded-lg scale-in">
+  </div>
+
+  <script>
+    function openform(val) {
+      localStorage.setItem("val", JSON.stringify(val));
+      window.location.href = "form.html";
+    }
+
+    const modal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
+    const closeModal = document.getElementById("closeModal");
+
+    // Add click event to all thumbnails
+    document.querySelectorAll(".view-icon").forEach((viewIcon) => {
+      viewIcon.addEventListener("click", (e) => {
+        const card = viewIcon.closest(".card");
+        const resumeImage = card.querySelector("img");
+        modalImage.src = resumeImage.src;
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+      });
+    });
+
+    // Close modal on clicking the close button
+    closeModal.addEventListener("click", () => {
+      modal.classList.add("hidden");
+    });
+
+    // Close modal on clicking outside the image
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.add("hidden");
+      }
+    });
+  </script>
+</body>
+</html>
