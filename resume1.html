@@ -1,172 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resume</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
-    
-</head>
-<body class="bg-gray-100">
-    <div class="resume-container max-w-4xl mx-auto bg-white p-10 shadow-lg rounded-lg mt-10" id="resume">
-        <header class="text-center border-b-2 border-gray-300 pb-5 mb-8">
-            <h1 class="text-4xl font-bold text-purple-600 uppercase" id="resumeName">
-                Jacobin Ram
-            </h1>
-            <div class="flex justify-center space-x-4 mt-2">
-                <p class="text-gray-600" id="addressresume">Pune</p>
-                <p class="text-gray-600" id="phonenoresume">+91-8756243678</p>
-                <p class="text-gray-600" id="emailresume">abc@gmail.com</p>
-            </div>
-            <a href="" id="portfolio" class="text-blue-600 underline mt-2 inline-block">www.portfolio.com</a>
-        </header>
+  </head>
+  <body class="bg-gray-100">
+    <div
+      class="resume-container max-w-4xl mx-auto bg-white p-10 shadow-lg rounded-lg mt-10"
+      id="resume"
+    >
+      <header class="text-center border-b-2 border-gray-300 pb-5 mb-8">
+        <h1
+          class="text-4xl font-bold text-purple-600 uppercase"
+          id="resumeName"
+        >
+          Jacobin Ram
+        </h1>
+        <div class="flex justify-center space-x-4 mt-2">
+          <p class="text-gray-600" id="addressresume">Pune</p>
+          <p class="text-gray-600" id="phonenoresume">+91-8756243678</p>
+          <p class="text-gray-600" id="emailresume">abc@gmail.com</p>
+        </div>
+        <a
+          href=""
+          id="portfolio"
+          class="text-blue-600 underline mt-2 inline-block"
+          >www.portfolio.com</a
+        >
+      </header>
 
-        <section class="mb-8">
-            <h2 class="text-2xl font-semibold text-purple-600 border-b-2 border-gray-300 pb-2">SUMMARY</h2>
-            <p class="text-gray-700 mt-4" id="summary">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius cumque aperiam ipsam asperiores explicabo odit minima veniam excepturi optio placeat.
-            </p>
-        </section>
+      <section class="mb-8">
+        <h2
+          class="text-2xl font-semibold text-purple-600 border-b-2 border-gray-300 pb-2"
+        >
+          SUMMARY
+        </h2>
+        <p class="text-gray-700 mt-4" id="summary">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius cumque
+          aperiam ipsam asperiores explicabo odit minima veniam excepturi optio
+          placeat.
+        </p>
+      </section>
 
-        <section class="mb-8">
-            <h2 class="text-2xl font-semibold text-purple-600 border-b-2 border-gray-300 pb-2">SKILLS</h2>
-            <ul class="list-disc ml-6 mt-4 text-gray-700" id="skillsList"></ul>
-        </section>
+      <section class="mb-8">
+        <h2
+          class="text-2xl font-semibold text-purple-600 border-b-2 border-gray-300 pb-2"
+        >
+          SKILLS
+        </h2>
+        <ul class="list-disc ml-6 mt-4 text-gray-700" id="skillsList"></ul>
+      </section>
 
-        <section class="mb-8">
-            <h2 class="text-2xl font-semibold text-purple-600 border-b-2 border-gray-300 pb-2">EXPERIENCE</h2>
-            <div id="experience-display" class="experience-display"></div>
-        </section>
+      <section class="mb-8">
+        <h2
+          class="text-2xl font-semibold text-purple-600 border-b-2 border-gray-300 pb-2"
+        >
+          EXPERIENCE
+        </h2>
+        <div id="experience-display" class="experience-display"></div>
+      </section>
 
-        <section class="mb-8">
-            <h2 class="text-2xl font-semibold text-purple-600 border-b-2 border-gray-300 pb-2">PROJECTS</h2>
-            <div id="project-display" class="project-display"></div>
-        </section>
+      <section class="mb-8">
+        <h2
+          class="text-2xl font-semibold text-purple-600 border-b-2 border-gray-300 pb-2"
+        >
+          PROJECTS
+        </h2>
+        <div id="project-display" class="project-display"></div>
+      </section>
 
-        <section class="mb-8">
-            <h2 class="text-2xl font-semibold text-purple-600 border-b-2 border-gray-300 pb-2">EDUCATION</h2>
-            <div id="education-display" class="education-display"></div>
-        </section>
+      <section class="mb-8">
+        <h2
+          class="text-2xl font-semibold text-purple-600 border-b-2 border-gray-300 pb-2"
+        >
+          EDUCATION
+        </h2>
+        <div id="education-display" class="education-display"></div>
+      </section>
 
-        <section>
-            <h2 class="text-2xl font-semibold text-purple-600 border-b-2 border-gray-300 pb-2">CERTIFICATES</h2>
-            <ul class="list-disc ml-6 mt-4 text-gray-700" id="certificateList"></ul>
-        </section>
+      <section>
+        <h2
+          class="text-2xl font-semibold text-purple-600 border-b-2 border-gray-300 pb-2"
+        >
+          CERTIFICATES
+        </h2>
+        <ul class="list-disc ml-6 mt-4 text-gray-700" id="certificateList"></ul>
+      </section>
 
-        <!-- Download Button -->
-        
+      <!-- Download Button -->
     </div>
     <div class="text-center mt-8">
-        <button id="downloadBtn" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300">
-            Download Resume 
-        </button>
+      <button
+        id="downloadBtn"
+        class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300"
+      >
+        Download Resume
+      </button>
     </div>
 
     <script>
-        const formData = JSON.parse(localStorage.getItem("formData"));
+      const formData = JSON.parse(localStorage.getItem("formData"));
 
-        let Name = formData.name;
-        let phoneno = formData.phone;
-        let email = formData.email;
-        let address = formData.address;
-        let portfolio = formData.portfolio;
-        let summary = formData.summary;
-        let projects = formData.projects;
-        let Experiences = formData.experiences;
-        let Education = formData.education;
-        let Skills = formData.skills;
-        let Certificates = formData.certificates;
+      let Name = formData.name;
+      let phoneno = formData.phone;
+      let email = formData.email;
+      let address = formData.address;
+      let portfolio = formData.portfolio;
+      let summary = formData.summary;
+      let projects = formData.projects;
+      let Experiences = formData.experiences;
+      let Education = formData.education;
+      let Skills = formData.skills;
+      let Certificates = formData.certificates;
 
-        document.getElementById("resumeName").innerHTML = Name;
-        document.getElementById("addressresume").innerHTML = address + "|";
-        document.getElementById("phonenoresume").innerHTML = phoneno + "|";
-        document.getElementById("emailresume").textContent = email;
-        document.getElementById("portfolio").textContent = portfolio;
-        document.getElementById("summary").textContent = summary;
+      document.getElementById("resumeName").innerHTML = Name;
+      document.getElementById("addressresume").innerHTML = address;
+      document.getElementById("phonenoresume").innerHTML = phoneno;
+      document.getElementById("emailresume").textContent = email;
+      document.getElementById("portfolio").textContent = portfolio;
+      document.getElementById("summary").textContent = summary;
 
-        // Experience display
-        const displayExperience = document.getElementById('experience-display');
-        Experiences.forEach(block => {
-            const displayBlock = document.createElement('div');
-            displayBlock.innerHTML = `
-                <h4 class="font-bold text-gray-800">${block.company || 'Company Name'}</h4>
-                <p class="text-gray-600 text-right font-bold text-sm">${block.years || 'Year'}</p>
-                <p class="text-gray-700">${block.description || 'Description'}</p>
+      // Experience display
+      const displayExperience = document.getElementById("experience-display");
+      Experiences.forEach((block) => {
+        const displayBlock = document.createElement("div");
+        displayBlock.innerHTML = `
+                <h4 class="font-bold text-gray-800">${
+                  block.company || "Company Name"
+                }</h4>
+                <p class="text-gray-600 text-right font-bold text-sm">${
+                  block.years || "Year"
+                }</p>
+                <p class="text-gray-700">${
+                  block.description || "Description"
+                }</p>
             `;
-            displayExperience.appendChild(displayBlock);
-        });
+        displayExperience.appendChild(displayBlock);
+      });
 
-        // Skills display
-        const skillsList = document.getElementById("skillsList");
-        Skills.forEach((input) => {
-            const li = document.createElement("li");
-            li.textContent = input;
-            li.className = "capitalize";
-            skillsList.appendChild(li);
-        });
+      // Skills display
+      const skillsList = document.getElementById("skillsList");
+      Skills.forEach((input) => {
+        const li = document.createElement("li");
+        li.textContent = input;
+        li.className = "capitalize";
+        skillsList.appendChild(li);
+      });
 
-        // Projects display
-        const displayProjects = document.getElementById("project-display");
-        projects.forEach(block => {
-            const displayBlock = document.createElement('div');
-            displayBlock.innerHTML = `
-                <h3 class="font-bold text-gray-800">${block.name || "Project Name"}</h3>
-                <p class="text-gray-700">${block.description || "Description"}</p>
-                <a href="${block.link}" target="_blank" class="text-blue-500 hover:underline">${block.link || "Link"}</a>
+      // Projects display
+      const displayProjects = document.getElementById("project-display");
+      projects.forEach((block) => {
+        const displayBlock = document.createElement("div");
+        displayBlock.innerHTML = `
+                <h3 class="font-bold text-gray-800">${
+                  block.name || "Project Name"
+                }</h3>
+                <p class="text-gray-700">${
+                  block.description || "Description"
+                }</p>
+                <a href="${
+                  block.link
+                }" target="_blank" class="text-blue-500 hover:underline">${
+          block.link || "Link"
+        }</a>
             `;
-            displayProjects.appendChild(displayBlock);
-        });
+        displayProjects.appendChild(displayBlock);
+      });
 
-        // Certificates display
-        const certificateList = document.getElementById("certificateList");
-        Certificates.forEach(block => {
-            const li = document.createElement("li");
-            li.textContent = block;
-            li.className = "capitalize";
-            certificateList.appendChild(li);
-        });
+      // Certificates display
+      const certificateList = document.getElementById("certificateList");
+      Certificates.forEach((block) => {
+        const li = document.createElement("li");
+        li.textContent = block;
+        li.className = "capitalize";
+        certificateList.appendChild(li);
+      });
 
-        // Education display
-        const displayEducation = document.getElementById('education-display');
-        Education.forEach(block => {
-            const displayBlock = document.createElement('div');
-            displayBlock.classList.add('mt-4');
-            displayBlock.innerHTML = `
-                <h3 class="font-bold text-gray-800">${block.course || 'Course Name'}</h3>
-                <p class="text-gray-600 text-right font-bold text-sm">${block.year || 'Year'}</p>
-                <p class="text-gray-700">${block.institute || 'Institute Name'}</p>
-                <p class="text-gray-700">${block.marks ? `Marks: ${block.marks}` : ''}</p>
+      // Education display
+      const displayEducation = document.getElementById("education-display");
+      Education.forEach((block) => {
+        const displayBlock = document.createElement("div");
+        displayBlock.classList.add("mt-4");
+        displayBlock.innerHTML = `
+                <h3 class="font-bold text-gray-800">${
+                  block.course || "Course Name"
+                }</h3>
+                <p class="text-gray-600 text-right font-bold text-sm">${
+                  block.year || "Year"
+                }</p>
+                <p class="text-gray-700">${
+                  block.institute || "Institute Name"
+                }</p>
+                <p class="text-gray-700">${
+                  block.marks ? `Marks: ${block.marks}` : ""
+                }</p>
             `;
-            displayEducation.appendChild(displayBlock);
-        });
+        displayEducation.appendChild(displayBlock);
+      });
 
-        // Download PDF functionality
-        document.getElementById("downloadBtn").addEventListener("click", () => {
-            const resumeElement = document.getElementById("resume");
-          
-            // Remove all margins and paddings globally
-           
-          
-            // Ensure no gap in the PDF output
-            const options = {
-              margin: [0, 0.3, 0, 0.3], // Top, right, bottom, left margins set to 0
-              filename: "resume.pdf",
-              image: { type: "jpeg", quality: 0.98 },
-              html2canvas: {
-                scale: 2, // Higher scale for better quality
-                useCORS: true,
-                scrollY: 0, // Prevent vertical scrolling issues
-              },
-              jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
-            };
-          
-            // Generate and save the PDF
-            html2pdf().set(options).from(resumeElement).save();
-          });
-          
+      // Download PDF functionality
+      document.getElementById("downloadBtn").addEventListener("click", () => {
+        const resumeElement = document.getElementById("resume");
+
+        // Remove all margins and paddings globally
+
+        // Ensure no gap in the PDF output
+        const options = {
+          margin: [0, 0.3, 0, 0.3], // Top, right, bottom, left margins set to 0
+          filename: "resume.pdf",
+          image: { type: "jpeg", quality: 0.98 },
+          html2canvas: {
+            scale: 2, // Higher scale for better quality
+            useCORS: true,
+            scrollY: 0, // Prevent vertical scrolling issues
+          },
+          jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
+        };
+
+        // Generate and save the PDF
+        html2pdf().set(options).from(resumeElement).save();
+      });
     </script>
-</body>
+  </body>
 </html>
-
-
